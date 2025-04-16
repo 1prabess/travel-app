@@ -1,6 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-const {width, height} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   card: {
@@ -30,11 +30,13 @@ const styles = StyleSheet.create({
 
   title: {
     fontWeight: 'bold',
-    marginTop: 7,
-    marginBottom: 5,
+    fontSize: 16,
+    marginTop: 5,
+    marginBottom: 7,
   },
 
   subtitle: {
+    fontSize: 14,
     color: 'grey',
   },
 });
