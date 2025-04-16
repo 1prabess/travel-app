@@ -1,31 +1,37 @@
-import React, {useState} from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 import Title from '../../components/title';
 import styles from './styles';
 import Categories from '../../components/categories';
 import AttractionCard from '../../components/attractionCard';
+import attractionsJSON from '../../assets/data/attractions.json';
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [attractionsData, setAttractionsData] = useState([]);
 
   const handleSelectCategory = category => {
     setSelectedCategory(category);
+    setAttractionsData(attractionsJSON);
   };
+
+  useEffect(() => {
+    console.log(attractionsData);
+  }, []);
 
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Title text="Where do" style={{fontWeight: 'normal'}} />
-        <Title text="you want to go?" />
+        <Title text="Explore Attractions" />
 
-        <Text
+        {/* <Text
           style={{
             marginTop: 25,
             marginBottom: 20,
             fontSize: 24,
           }}>
           Explore Attractions
-        </Text>
+        </Text> */}
 
         <Categories
           selectedCategory={selectedCategory}
@@ -41,17 +47,16 @@ const Home = () => {
           ]}
         />
 
-        <View style={styles.row}>
-          <AttractionCard
-            imageSrc="https://images.unsplash.com/photo-1513614835783-51537729c8ba?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            title="National park."
-          />
-
-          <AttractionCard
-            imageSrc="https://images.unsplash.com/photo-1513614835783-51537729c8ba?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            title="National park "
-          />
-        </View>
+        <ScrollView contentContainerStyle={styles.row}>
+          {attractionsData?.map(attraction => (
+            <AttractionCard
+              key={attraction.id}
+              imageSrc={attraction.images[0]}
+              title={attraction.name}
+              country={attraction.country}
+            />
+          ))}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
