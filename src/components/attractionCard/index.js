@@ -1,10 +1,10 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from './style';
 
-const AttractionCard = ({imageSrc, title, country}) => {
+const AttractionCard = ({imageSrc, title, country, onNavigate}) => {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity onPress={onNavigate} style={styles.card}>
       <Image source={{uri: imageSrc}} style={styles.image} />
       <View style={styles.details}>
         <Text style={[styles.title]}>{title}</Text>
@@ -16,7 +16,7 @@ const AttractionCard = ({imageSrc, title, country}) => {
           <Text style={styles.subtitle}>{country}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
