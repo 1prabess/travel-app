@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {FlatList, SafeAreaView, ScrollView} from 'react-native';
 import Title from '../../components/title';
 import styles from './styles';
 import Categories from '../../components/categories';
 import AttractionCard from '../../components/attractionCard';
 import attractionsJSON from '../../assets/data/attractions.json';
+import categoriesJSON from '../../assets/data/categories.json';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
+  const navigation = useNavigation();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [attractionsData, setAttractionsData] = useState([]);
 
@@ -20,44 +23,45 @@ const Home = () => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Title text="Explore Attractions" />
-
-        {/* <Text
-          style={{
-            marginTop: 25,
-            marginBottom: 20,
-            fontSize: 24,
-          }}>
-          Explore Attractions
-        </Text> */}
-
-        <Categories
-          selectedCategory={selectedCategory}
-          onCategoryPress={handleSelectCategory}
-          categories={[
-            'All',
-            'Popular',
-            'Historical',
-            'Random',
-            'Trending',
-            'Exlcusive',
-            'Others',
-          ]}
-        />
-
-        <ScrollView contentContainerStyle={styles.row}>
-          {attractionsData?.map(attraction => (
-            <AttractionCard
-              key={attraction.id}
-              imageSrc={attraction.images[0]}
-              title={attraction.name}
-              country={attraction.country}
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={
+          <>
+            <Title text="Explore Attractions" />
+            <Categories
+              selectedCategory={selectedCategory}
+              onCategoryPress={handleSelectCategory}
+              categories={['All', ...categoriesJSON]}
             />
-          ))}
-        </ScrollView>
-      </View>
+          </>
+        }
+        data={
+          selectedCategory === 'All'
+            ? attractionsJSON
+            : attractionsData.filter(attraction =>
+                attraction.categories.includes(selectedCategory),
+              )
+        }
+        keyExtractor={item => String(item?.id)}
+        numColumns={2}
+        columnWrapperStyle={{
+          justifyContent: 'space-between',
+          gap: 10,
+          marginBottom: 10,
+        }}
+        renderItem={({item}) => (
+          <AttractionCard
+            onNavigate={() =>
+              navigation.navigate('AttractionDetails', {item: item})
+            }
+            key={item.id}
+            imageSrc={item.images[0]}
+            title={item.name}
+            country={item.country}
+          />
+        )}
+      />
     </SafeAreaView>
   );
 };
