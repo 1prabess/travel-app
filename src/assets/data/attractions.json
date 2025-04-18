@@ -19,10 +19,7 @@
       "https://www.onthegotours.com/blog/wp-content/uploads/2019/05/Colosseum-in-the-morning-Rome-Italy.jpg",
       "https://hips.hearstapps.com/hmg-prod/images/tod-s-for-colosseum-hypogea-1-1624912790.jpg"
     ],
-    "coordinates": {
-      "lat": 41.8902,
-      "lon": 12.4922
-    }
+    "coordinates": {"lat": 41.8902, "lon": 12.4922}
   },
   {
     "id": 2,
@@ -39,10 +36,7 @@
       "https://www.forbesindia.com/media/images/2022/May/img_184243_tajmahalindia.jpg",
       "https://www.tajmahal.gov.in/images/tajmahal-view/day/1.jpg"
     ],
-    "coordinates": {
-      "lat": 27.1751,
-      "lon": 78.0421
-    }
+    "coordinates": {"lat": 27.1751, "lon": 78.0421}
   },
   {
     "id": 3,
@@ -60,10 +54,7 @@
       "https://www.grunge.com/img/gallery/the-bizarre-history-of-the-eiffel-tower/l-intro-1602781703.jpg",
       "https://th-thumbnailer.cdn-si-edu.com/Q-oOOYwzuhWGLlUa0NvS4jbMGoI=/fit-in/1600x0/filters:focal(1500x1000:1501x1001)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/04/0f/040fc6b3-2c00-4592-9993-8c0c485fcf99/gettyimages-142198198.jpg"
     ],
-    "coordinates": {
-      "lat": 48.8584,
-      "lon": 2.2945
-    }
+    "coordinates": {"lat": 48.8584, "lon": 2.2945}
   },
   {
     "id": 4,
@@ -80,9 +71,38 @@
       "https://juliasalbum.com/wp-content/uploads/2019/04/leaning-tower-of-Pisa-Italy.jpg",
       "https://i.pinimg.com/originals/9d/d9/47/9dd947df69dfb08fc55218c1eecad7ce.jpg"
     ],
-    "coordinates": {
-      "lat": 43.723,
-      "lon": 10.3966
-    }
+    "coordinates": {"lat": 43.723, "lon": 10.3966}
+  },
+  {
+    "id": 5,
+    "name": "Opera House",
+    "city": "Sydney",
+    "country": "Australia",
+    "entry_price": "$35",
+    "address": "Bennelong Point, Sydney NSW 2000, Australia",
+    "opening_time": "9:00 AM",
+    "closing_time": "5:00 PM",
+    "categories": ["Popular", "Trending"],
+    "images": [
+      "https://images.unsplash.com/photo-1605578298583-e935687f3e0a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1552142035-ca961dce78fe?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "coordinates": {"lat": -33.8568, "lon": 151.2153}
+  },
+  {
+    "id": 6,
+    "name": "Burj Khalifa",
+    "city": "Dubai",
+    "country": "UAE",
+    "entry_price": "$40",
+    "address": "1 Sheikh Mohammed bin Rashid Blvd, Dubai, UAE",
+    "opening_time": "10:00 AM",
+    "closing_time": "11:00 PM",
+    "categories": ["Popular", "Trending"],
+    "images": [
+      "https://images.unsplash.com/photo-1544092683-c0c9ebb368e5?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1640953036047-5566900ea05d?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "coordinates": {"lat": 25.1972, "lon": 55.2744}
   }
 ]
