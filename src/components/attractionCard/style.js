@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
   card: {
     borderWidth: 1,
     borderColor: '#E2E2E2',
+    borderRadius: 10,
   },
 
   row: {
@@ -24,8 +25,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: (width - 80) / 2,
+    width: (width - 60) / 2,
     height: 120,
+    borderRadius: 10,
   },
 
   title: {
