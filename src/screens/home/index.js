@@ -47,7 +47,7 @@ const Home = () => {
         numColumns={2}
         columnWrapperStyle={{
           justifyContent: 'space-between',
-          gap: 10,
+          gap: 5,
           marginBottom: 10,
         }}
         renderItem={({item}) => (
