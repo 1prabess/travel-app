@@ -37,8 +37,14 @@ const AttractionDetails = ({route}) => {
         <Pressable
           onPress={() => navigation.navigate('Gallery', {images: item?.images})}
           style={styles.images}>
-          {item?.images?.map(image => {
-            return <Image style={styles.miniImage} source={{uri: image}} />;
+          {item?.images?.map((image, index) => {
+            return (
+              <Image
+                style={styles.miniImage}
+                key={index}
+                source={{uri: image}}
+              />
+            );
           })}
         </Pressable>
       </View>
